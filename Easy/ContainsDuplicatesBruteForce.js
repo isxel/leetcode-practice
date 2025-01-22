@@ -13,26 +13,28 @@
  * @param {number[]} nums - The array of numbers to check for duplicates.
  * @returns {boolean} - Returns true if duplicates are found, otherwise false.
  */
+var containsDuplicateBruteForce = function (nums) {
+  if (nums.length === 0) {
+    console.log("Array Is Empty");
+    return false;
+  }
 
-var containsDuplicate = function (nums) {
+  let containsDuplicate = false;
   console.log(nums);
-  let setOfNums = new Set();
 
   for (i = 0; i < nums.length; i++) {
-    console.log("current i:", i, "which is:", nums[i]);
-    if (setOfNums.has(nums[i])) {
-      console.log("Duplicate Found");
-      return true;
+    for (j = i + 1; j < nums.length; j++) {
+      if (nums[i] == nums[j]) {
+        containsDuplicate = true;
+        break;
+      }
     }
-    setOfNums.add(nums[i]);
   }
-  console.log("No Duplicates Were Found");
-
-  return false;
+  console.log("Array: ", containsDuplicate);
+  return containsDuplicate;
 };
 
-console.log(containsDuplicate([1, 2, 3]));
-console.log(containsDuplicate([1, 2, 1]));
-console.log(
-  containsDuplicate([1, 2, 4, 5, 7, 8, 9, 10, 12, 16, 23, 654, 23, 25, 1])
-);
+containsDuplicateBruteForce([1, 2, 3, 4, 5]);
+containsDuplicateBruteForce([1, 2, 3, 4, 1]);
+containsDuplicateBruteForce([]);
+containsDuplicateBruteForce([1]);
