@@ -29,14 +29,21 @@ var encode = function (strs) {
  * @return {string[]}
  */
 var decode = function (s) {
+  //Initialize array we will insert strings into
   let decodedStrings = [];
+  //Initialize string we are currently decoding
   let currString = "";
 
+  //Iterating through the string we were given
   for (let i = 0; i < s.length; i++) {
+    //As we are iterating look for '/'
     if (s[i] === "/") {
+      //If found, push the currString into the array
       decodedStrings.push(currString);
+      //Reset currString
       currString = "";
     } else {
+      //If its not '/' we add letter onto currString
       currString += s[i];
     }
   }
