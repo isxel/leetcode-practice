@@ -17,6 +17,7 @@ var isPalindrome = function (s) {
   //We are creating a string that removes any special characters/spaces
   //Anything that is not a-z and or 0-9
   let strippedPhrase = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
   //Returning boolean based on if this stripped character is the same reversed
   return strippedPhrase === strippedPhrase.split("").reverse().join("");
 };

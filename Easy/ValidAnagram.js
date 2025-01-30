@@ -13,9 +13,12 @@
  * @return {boolean}
  */
 var isAnagram = function (s, t) {
+  //Sorting S which requires splitting and joining back together
   let sortedS = s.split("").sort().join("");
+  //Sorting T which requires the same
   let sortedT = t.split("").sort().join("");
 
+  //Onec sorted these anagrams should either match or not
   return sortedS === sortedT;
 };
 
