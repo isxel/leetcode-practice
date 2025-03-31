@@ -12,12 +12,12 @@
 
 class Solution:
     def twoSum(self, nums: list, target: int) -> list:
-        differenceDict = {}
+        differenceDict = {} #Initializing the dictionary
 
         for i in range(len(nums)): #Looping through nums
             diff = target - nums[i] #Calculating difference
             if diff in differenceDict: #This means we've seen it already in the dictionary
-                return [differenceDict[diff], i]
+                return [differenceDict[diff], i] #Returning the pair of indecies that equal the target
             else:
                 differenceDict[nums[i]] = i #Otherwise, store current number in dictionary with its index
             
